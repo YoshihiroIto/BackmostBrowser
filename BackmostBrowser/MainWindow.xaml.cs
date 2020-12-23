@@ -48,6 +48,7 @@ namespace BackmostBrowser
             };
 
             StateChanged += (_, _) => WindowStyle = WindowState == WindowState.Maximized ? WindowStyle.None : WindowStyle.ThreeDBorderWindow;
+            Closed += (_, _) => WebView.Dispose();
 
             WebView.PreviewKeyDown += (_, e) =>
             {
